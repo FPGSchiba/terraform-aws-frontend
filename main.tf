@@ -1,16 +1,3 @@
-terraform {
-  required_providers {
-    aws = {
-      source  = "hashicorp/aws"
-      version = ">= 5.0"
-    }
-  }
-}
-
-locals {
-  normalized_output_dir = trim(var.output_directory, "/")
-}
-
 resource "aws_amplify_app" "this" {
   name       = var.app_name
   repository = var.github_repository_url # e.g. https://github.com/org/repo
